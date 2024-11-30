@@ -38,7 +38,7 @@ class MoveForResultActivity : AppCompatActivity(), OnClickListener {
                 R.id.rb_150 -> value = 150
                 R.id.rb_200 -> value = 200
             }
-            
+
             Intent().apply {
                 putExtra(EXTRA_SELECTED_VALUE, value)
             }.also {
