@@ -7,6 +7,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.snackbar.Snackbar
 
 class MainActivity : AppCompatActivity(), OnClickListener {
     private lateinit var editLength: EditText
@@ -18,6 +19,7 @@ class MainActivity : AppCompatActivity(), OnClickListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         setContentView(R.layout.activity_main)
 
         // get widget or element by id
@@ -49,7 +51,7 @@ class MainActivity : AppCompatActivity(), OnClickListener {
         return true
     }
 
-    private fun doCalculate() {
+    private fun doCalculate(view: View) {
         val validates = mutableListOf<Boolean>()
 
         if (doValidate(editLength)) validates.add(true)
@@ -67,11 +69,15 @@ class MainActivity : AppCompatActivity(), OnClickListener {
         val height = stringParseToDouble(editHeight)
         val result = length * width * height
         textViewResult.text = "Result: $result"
+
+
+        Snackbar.make(view, "Success", Snackbar.LENGTH_SHORT).show()
+
     }
 
     override fun onClick(view: View) {
         when (view.id) {
-            R.id.button_calculate -> doCalculate()
+            R.id.button_calculate -> doCalculate(view)
         }
     }
 
