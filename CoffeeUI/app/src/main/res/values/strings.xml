@@ -3,4 +3,9 @@
     <string name="title">Fall in Love with Coffee in Blissful Delight!</string>
     <string name="description">Welcome to cour cozy coffee corner, where every cup is a delightful of you.</string>
     <string name="get_started">Get Started</string>
+    <string name="coffee">Coffee</string>
+    <string name="location">Location</string>
+    <string name="south_jakarta">Kebagusan, South Jakarta</string>
+    <string name="search">Search</string>
+    <string name="filter">Filter</string>
 </resources>
