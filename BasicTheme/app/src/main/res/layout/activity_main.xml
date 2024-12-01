@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <TextView
+        android:id="@+id/text_title"
+        style="@style/TextStyleTitleMedium"
+        android:text="I want to upload files"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_upload"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Upload File"
+        app:icon="@drawable/ic_launcher_foreground"
+        app:layout_constraintEnd_toEndOf="@id/text_title"
+        app:layout_constraintStart_toStartOf="@id/text_title"
+        app:layout_constraintTop_toBottomOf="@id/text_title" />
+
+    <TextView
+        style="@style/TextStyleTitleMedium.Red"
+        android:layout_marginTop="16dp"
+        android:text="Dont' have account yet?"
+        app:layout_constraintEnd_toEndOf="@id/btn_upload"
+        app:layout_constraintStart_toStartOf="@id/btn_upload"
+        app:layout_constraintTop_toBottomOf="@id/btn_upload" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
