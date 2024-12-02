@@ -13,18 +13,23 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.snackbar.Snackbar
+import com.yashagozwan.myrecyclerview.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityMainBinding
 
     private lateinit var rvHeroes: RecyclerView
     private val heroes = ArrayList<HeroModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
 
-        rvHeroes = findViewById<RecyclerView>(R.id.rv_heroes)
-            .apply { setHasFixedSize(true) }
+        binding = ActivityMainBinding.inflate(layoutInflater)
+
+        setContentView(binding.root)
+
+        rvHeroes = binding.rvHeroes.apply { setHasFixedSize(true) }
 
         heroes.addAll(getHeroes())
 
@@ -36,13 +41,13 @@ class MainActivity : AppCompatActivity() {
 
         val names = resources.getStringArray(R.array.data_name)
         val descriptions = resources.getStringArray(R.array.data_description)
-        val images = resources.obtainTypedArray(R.array.data_photo)
+        val images = resources.getStringArray(R.array.data_photo_url)
 
         for (index in names.indices) {
             val hero = HeroModel(
                 name = names[index],
                 description = descriptions[index],
-                photo = images.getResourceId(index, -1)
+                photo = images[index]
             )
 
             heroes.add(hero)
