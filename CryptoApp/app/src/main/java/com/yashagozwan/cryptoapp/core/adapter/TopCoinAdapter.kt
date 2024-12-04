@@ -6,7 +6,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.yashagozwan.cryptoapp.core.utils.Utils
 import com.yashagozwan.cryptoapp.databinding.CardMediumCoinBinding
-import com.yashagozwan.cryptoapp.databinding.TopCoinsBinding
 import com.yashagozwan.cryptoapp.domain.model.CoinModel
 
 class TopCoinAdapter(

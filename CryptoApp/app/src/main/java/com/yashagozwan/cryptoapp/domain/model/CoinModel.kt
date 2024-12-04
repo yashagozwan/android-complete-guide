@@ -16,4 +16,7 @@ data class CoinModel(
     val priceChangePercentage24: Double,
     @SerializedName("market_cap_change_percentage_24h")
     val marketCapChangePercentage24: Double,
+    @SerializedName("ath_change_percentage")
+    val athChangePercentage : Double,
+    val atl: Double,
 ) : Parcelable
