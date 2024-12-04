@@ -64,6 +64,7 @@ dependencies {
     implementation("io.ktor:ktor-serialization-gson:3.0.1")
     implementation ("com.google.code.gson:gson:2.11.0")
     implementation("com.github.bumptech.glide:glide:4.16.0")
+    implementation("com.melnykov:floatingactionbutton:1.3.0")
 
 }
 

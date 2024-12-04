@@ -1,9 +1,9 @@
 package com.yashagozwan.cryptoapp.presentation.home
 
+import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -13,6 +13,7 @@ import com.yashagozwan.cryptoapp.core.adapter.CoinsAdapter
 import com.yashagozwan.cryptoapp.core.adapter.TopCoinAdapter
 import com.yashagozwan.cryptoapp.core.utils.Utils
 import com.yashagozwan.cryptoapp.databinding.ActivityMainBinding
+import com.yashagozwan.cryptoapp.presentation.coins.CoinsActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 
@@ -31,6 +32,13 @@ class MainActivity : AppCompatActivity() {
         buildCoin()
         buildTopCoins()
         buildCoins()
+        buildMoreButton()
+    }
+
+    private fun buildMoreButton() {
+        binding.tvMore.setOnClickListener {
+            Intent(it.context, CoinsActivity::class.java).also(::startActivity)
+        }
     }
 
 
@@ -70,10 +78,6 @@ class MainActivity : AppCompatActivity() {
         viewModel.topCoins.observe(this@MainActivity) { coins ->
             val adapter = TopCoinAdapter(coins) { coin ->
                 viewModel.setCoin(coin)
-
-                Toast
-                    .makeText(this@MainActivity, coin.name, Toast.LENGTH_SHORT)
-                    .show();
             }
 
             binding.rvTopCoins.adapter = adapter

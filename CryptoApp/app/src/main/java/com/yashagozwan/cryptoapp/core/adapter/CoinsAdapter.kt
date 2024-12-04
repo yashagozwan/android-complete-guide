@@ -13,6 +13,7 @@ class CoinsAdapter(
     private val coins: List<CoinModel>,
     private val onClick: (coin: CoinModel, view: View) -> Unit,
 ) : RecyclerView.Adapter<CoinsAdapter.ListViewHolder>() {
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListViewHolder {
         val binding = CardSmallCoinBinding
             .inflate(LayoutInflater.from(parent.context), parent, false)

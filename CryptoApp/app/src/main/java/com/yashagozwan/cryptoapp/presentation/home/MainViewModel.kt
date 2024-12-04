@@ -30,7 +30,7 @@ class MainViewModel @Inject constructor(
 
         _coin.value = coins.first()
         _topCoins.value = coins.take(5)
-        _coins.value = coins.subList(5, coins.size - 1).take(10)
+        _coins.value = coins.subList(5, coins.size - 1).take(5)
     }
 
     fun setCoin(coin: CoinModel) {
